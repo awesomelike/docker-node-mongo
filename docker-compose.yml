@@ -1,15 +1,19 @@
 version: '3'
 services:
-  app:
-    container_name: docker-node-mongo
+  web:
+    container_name: docker-db-connection-handle
     restart: always
     build: .
     ports:
-      - '80:3000'
-    external_links:
-      - mongo
-  mongo:
-    container_name: mongo
+      - '81:3000'
+    links:
+      - db
+  db:
+    container_name: mongodb
     image: mongo
     ports:
-      - '27017:27017'
+      - '27018:27017'
+    volumes:
+      - shared_database:/data/db
+volumes:
+  shared_database:
