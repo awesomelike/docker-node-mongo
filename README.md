@@ -1,3 +1,5 @@
+(Extended version of https://github.com/bradtraversy/docker-node-mongo)
+
 # Docker Node MongoDB Boilerplate
 
 ## Quick Start
@@ -9,9 +11,6 @@ docker-compose up
 
 # Tear down
 docker-compose down
-
-# To be able to edit files, add volume to compose file
-volumes: ['./:/usr/src/app']
 
 # To re-build
 docker-compose build
